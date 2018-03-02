@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat" );
+
+
+/* BODY RESET */
+
+* {
+  margin:0;
+  padding:0;
+  border: 0;
+}
+
+$font-family: Montserrat, sans-serif;
+
+$black-color: #000000;
+$white-color: #ffffff;
+$light-green-color: #99CC31;
+$red-color: #e60000;
+
+$text-align-center: center;
+$text-align-left: left;
+
+@mixin background-image {
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background: no-repeat center center fixed;
+}
+
+@mixin linear-gradient() {
+
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0, 0.6));
+  opacity: .6;
+}
+
+body {font-family: $font-family;}
+
+/* NAVIGATION */
+
+.navbar-dark {
+
+  opacity: 0.6;
+
+  .navbar-brand {
+
+    h1 {
+      font-weight: bold;
+      text-align: center;
+    }
+    span {
+      color: $light-green-color;
+      font-size: 40px;
+    }
+  }
+
+  /* RESPONSIVE H1 HEADER */
+
+  @media (max-width: 768px) {text-align: center; }
+
+  .navbar-nav {
+
+    .nav-link {
+
+      color: #ffffff;
+      font-size: 17px;
+      text-align: center;
+
+      &:hover {
+        color: $light-green-color;
+      }
+    }
+  }
+}
+
+/* Header */
+
+header {
+  .img-fluid {
+
+    @include background-image();
+    width: 100%;
+    height: calc(100vh - 81px);
+
+  }
+}
+
+/* BREAKFAST GIRL SECTION*/
+
+
+#breakfast-girl {
+
+  background: $white-color;
+  height: 755px;
+
+  .img-fluid {
+
+    @include background-image();
+    border: 4px solid #f9f9f9;
+    padding: 10px 10px 10px 10px;
+    margin-top: 130px;
+
+  }
+
+  article {
+    margin-top: 150px;
+    text-align: $text-align-left;
+
+    .h2 {
+
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: #707070;
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  /* RESPONSIVE ARTICLE */
+
+  @media (max-width: 767px) {
+
+    article {
+
+      margin-top: 35px;
+      .h2 {text-align: $text-align-center;}
+      p {text-align: $text-align-center;}
+    }
+
+  }
+}
+
+/* TRAINERS SECTION */
+
+#trainers {
+
+  background: $black-color;
+  padding-top: 8px;
+
+  .img-fluid {
+    @include background-image();
+  }
+
+  .h2 {
+    color: $white-color;
+    letter-spacing: 5px;
+     padding-top: 100px;
+
+    &:hover {
+
+      color: $light-green-color;
+    }
+  }
+
+  .trainer-thumb {
+
+      position: relative;
+      margin-top: 29px;
+      margin-bottom: 74px;
+
+    .overlay-effect {
+
+      background: $light-green-color;
+      color: $white-color;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      vertical-align: middle;
+      opacity: 0;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+     transition: all 0.4s ease-in-out;
+
+    }
+
+    .h3 { color: $white-color;}
+    &:hover .overlay-effect {
+
+      opacity: 0.9;
+      transform: scale(0.9);
+      cursor: pointer;
+    }
+
+     }
+
+  p {
+    color: $white-color;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.4px;
+    margin-top: -40px;
+  }
+}
+
+/* SCHEDULE SECTION*/
+
+#work-schedule {
+
+  .h1 {
+    color: $black-color;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-top: 50px;
+
+  }
+
+  /* SCHEDULE ACCORDION */
+
+  #accordion {
+
+    padding-top: 45px;
+
+    .card {
+
+      width: 50%;
+      margin: auto;
+      background: white;
+      border: none;
+
+      .card-body {
+
+        .list-group {
+
+          border: none;
+
+          .list-group-item {
+
+            text-align: center;
+            font-weight: bold;
+            border: none;
+            font-size: 16px;
+            padding: 5px;
+
+            &:hover {color: $red-color; }
+          }
+        }
+      }
+      .card-header {
+        background-color: $white-color;
+      }
+      .btn {
+
+        background:  $white-color;
+        color: $black-color;
+        text-decoration: none;
+        list-style-type: none;
+        border: none;
+        margin: auto;
+        display: block;
+        font-size: 23px;
+        font-weight: bold;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        &:hover {
+
+          background-color: $red-color;
+          color: $white-color;
+        }
+      }
+    }
+    #sunday {
+      border-bottom: 1px solid $black-color;
+    }
+
+  }
+}
+
+/* MOTIVATION GIRL Section */
+
+#motivated-girl {
+
+  .h1 {
+      position: absolute;
+
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      background: #ff3385;
+    text-transform: uppercase;
+    color: $white-color;
+    margin: 35px;
+    width: 270px;
+    border-radius: 5px;
+
+    }
+
+  @media (max-width: 1225px) {
+
+    .h1 {
+      margin: 1px;
+      width: 245px;
+    }
+  }
+
+  @media (max-width: 1026px) {
+
+   .h1 {
+     font-size: 25px;
+   }
+  }
+
+  @media (max-width: 774px) {
+
+    .h1 {
+      font-size: 18px;
+      width: 125px;
+    }
+  }
+
+}
+
+
+/* SUCCESS STORY SECTION */
+
+#success-story {
+
+  background: #f3f4f6;
+
+  .img-fluid {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  article {
+    margin-top: 30px;
+
+    .h2 {
+      color: #00C8D6;
+    }
+
+    .h1 {
+      color: $black-color;
+    }
+
+  }
+
+  /* RESPONSIVE SUCCESS STORY */
+
+  @media (max-width: 768px) {
+
+    article {margin-top: 29px;}
+
+    .img-fluid {
+      margin-top: 34px;
+    }
+  }
+
+  #success-story-2 {padding: 30px;}
+
+  /* END RESPONSIVE SUCCESS STORY */
+
+}
+
+/* SUMMER CLASS SECTION */
+
+#summer-class {
+
+  .img-fluid {
+    border: none;}
+
+    .card-img-top {
+
+      text-decoration: none;
+      border-radius: 0;
+    }
+
+    .card-img-overlay {
+
+      background: #222831;
+      color: $white-color;
+
+      width: 550px;
+      padding: 50px;
+      margin: 80px;
+      text-align: left;
+
+      .card-title {
+        font-size: 70px;
+      }
+      .card-text {
+        font-size: 20px;
+      }
+      .btn-success {
+        font-weight: bold;
+      }
+    }
+
+  /* RESPONSIVE SUMMER CLASS SECTION */
+
+  @media (max-width: 1150px) {
+
+    .card-img-overlay {
+
+      width: 380px;
+
+      .card-title {
+        font-size: 35px;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+
+    .card-img-overlay {
+
+      width: 311px;
+      padding: 25px;
+      margin: 40px;
+
+      .card-title {font-size: 20px;}
+    }
+
+  }
+
+  @media (max-width: 650px) {
+
+   .card-img-overlay {
+
+     padding: 1px;
+     margin: 3px;
+     width: 237px;
+     height: 195px;
+
+     .card-title {font-size: 15px;}
+     .card-text {font-size: 15px;}
+   }
+  }
+
+  /* END RESPONSIVE SUMMER CLASS SECTION*/
+
+  }
+
+/* FOOTER */
+
+footer {
+
+  background-color: #222831;
+  color: $white-color;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+
+
+  .fab {
+    font-size: 56px;
+  }
+
+  .h2 {font-weight: bold;}
+  .h3 {font-weight: bold;}
+
+  .btn-success {
+    width: 165px;
+    height: 40px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+  .contact-info {
+      margin-left: 50px;
+
+  }
+
+  @media(max-width: 765px) {
+
+    #keep-in-touch {padding-top: 15px;}
+  }
+
+}
+
+
+
+
+
+
